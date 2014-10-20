@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -42,7 +47,7 @@ Plot histogram of the total number of steps taken each day:
 hist(steps_per_day$steps, xlab="Number of daily steps taken", main="")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 The mean and median total number of steps are as follows:
 
@@ -88,7 +93,7 @@ library(ggplot2)
 qplot(x=interval, y=mean, data = five_min_interval, xlab="5-Minute Interval", ylab="number of steps", geom = "line" )
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
 
 Report the 5-min interval, on average across all the days in the dataset, contains the maximum number of steps:
@@ -154,7 +159,7 @@ data_daily_steps <- tapply(imputed_data$steps, imputed_data$date, sum)
 hist(data_daily_steps, xlab = "Steps per day")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 The mean number of steps per day is at 10766.19, considering the imputed data. The median is also at 10766.19. 
 
@@ -239,4 +244,4 @@ plot(as.numeric(dataset$interval[1:288]), weekday_pattern, xlab= "5-minutes inte
 plot(as.numeric(dataset$interval[1:288]), weekend_pattern, xlab= "5-minutes interval", ylab = "Ave.Num of Steps across days", main = "Weekends",type = 'l')
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 
